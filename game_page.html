@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Drive Me Safe Captain Game</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/game.css" rel="stylesheet" type="text/css">
+
+    <!--leap motion-->
+    <!--<script src="http://js.leapmotion.com/leap-0.6.2.js"></script>-->
+    <script src="//js.leapmotion.com/leap-0.6.2.js"></script>
+
+    <!--easeljs : to manage the canvas better-->
+
+
+    <script src="https://code.createjs.com/easeljs-0.8.1.min.js"></script>
+    <!--sound js-->
+    <script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+
+    <script src="scripts/sound/game_sound.js" rel="javascript" type="text/javascript">
+
+    </script>
+    <style>
+
+        .hidden2 {
+
+
+            position
+            :
+            absolute
+          ;
+            left:
+            -10000px
+          ;
+            top:
+            auto
+          ;
+            width:
+            1px
+          ;
+            height:
+            1px
+          ;
+            overflow:
+            hidden
+          ;
+        }
+
+    </style>
+
+</head>
+<body onload="loadAssets()">
+<a class="hidden2" href="#istruzioni">Vai alle istruzioni di gioco</a><br/>
+<a class="hidden2" href="#gioco">Inizia a giocare</a>
+
+<h1>Introduzione per giocare a Drive Me Safe Captain Game</h1>
+
+<p>Benvenuto coraggioso astronauta. Sono il capitano dell'interstellar B 42. Ho bisogno del tuo aiuto per superare
+    questa tempesta astrale. Purtroppo siamo stati colpiti da un asteroide e sono rimasto ferito per cui non posso piu
+    controllare la nave.
+    Se vogliamo salvarci avrò bisogno del tuo aiuto. Segui attentamente le mie istruzioni.
+</p>
+
+<div id="istruzioni">
+    <h2>Come si gioca</h2>
+    <a class="hidden2" href="#mappa">Vai alla descrizione della mappa</a><br/>
+    <a class="hidden2" href="#movimento">Vai alle istruzioni di movimento</a><br/>
+    <a class="hidden2" href="#spara">Vai alle istruzioni di come sparare</a>
+    <a class="hidden2" href="#gioco">Inizia a giocare</a>
+
+    <p id="mappa">La mappa dello spazio è un quadrante reattangolare messo in verticale. L'astronave si trova in fondo a
+        tale quadrante e potrà muoversi solo a destra e a sinistra. Dalla parte opposta in alto del quadrante
+        scenderanno degli asteroidi con cui dovremmo evitare di collidere. Ogni tanto scenderanno anche degli astronauti
+        che dovremmo invece salvare.
+        Il sonar di bordo ci rivelerò la posizione degli asteroidi mentre la radio di bordo ci trasmetterà la posizione
+        degli astronauti.</p>
+
+    <p id="movimento">
+        Metti la tua mano un pò sopra al Leap Motion, ovvero il controllore di volo, in questa maniera potrai
+        controllare la nave muovendo la
+        mano a
+        destra e a sinistra.
+        In alternativa puoi muoverti a destra premendo il tasto A sulla tastiera, mentre per muoverti a sinistra il
+        pulsante D.
+    </p>
+
+    <p id="spara">La nave possiede anche dei missili per cui possiamo distruggere gli asteroidi cosi eviteremo che altre
+        navi vengano colpite e guadagnerai piu punti.
+        Per sparare puoi cliccare la barra di SPAZIO oppure se usi il Leap Motion basterà chiudere il pugno.
+        Riceverai un segnale di allineamneto diverso dal segnale del sonar, a quel punto potrai sparare.Quando non
+        sentirai piu la voce della radio significa che sarai allineato con l'astronauta da salvare per cui cerca di
+        mantenere la posizione.
+    </p>
+</div>
+<p id="gioco">Per iniziare a giocare clicca su Q, sempre cliccando su Q potrai mettere in pausa il gioco. Anche
+    posizionando due mani sopra al Leap Motion, il gioco si metterà in pausa, per riprendere il gioco basterà premere su
+    Q o anche sparare un missile con il pugno chiuso</p>
+
+<div class="row text-center">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+        <canvas id="game_canvas" width="512" height="768"> Canvas is not supported into your browser</canvas>
+        <div id="console">console log</div>
+        <div id="position">console log2</div>
+    </div>
+</div>
+<div style="display:none;">
+    <img id="background" src="img/space.jpg" alt="immagine di sfondo del gioco">
+</div>
+<div class="row text-center">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+        <h2>Game Commands</h2>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+</script>
+
+<!--game logic-->
+<script src="scripts/game.js" type="text/javascript"></script>
+
+<!--leap library and control logic-->
+
+
+<script src="scripts/jquery/jquery-2.1.4.js" type="text/javascript"></script>
+<script src="scripts/jquery/jquery.aria.js" type="text/javascript"></script>
+<script src="scripts/jquery/jquery-hotkeys.js" type="text/javascript"></script>
+<script src="scripts/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
